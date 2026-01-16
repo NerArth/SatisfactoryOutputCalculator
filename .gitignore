@@ -208,3 +208,7 @@ __marimo__/
 
 # Icons
 icons/**/*.png
+icons/**/*.gif
+icons/**/*.jpg
+icons/**/*.jpeg
+icons/**/*.webp
