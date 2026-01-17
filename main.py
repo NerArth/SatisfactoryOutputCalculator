@@ -24,9 +24,11 @@ desired_item.place(relx=0.0, rely=0.06, anchor="nw")
 input1 = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
 input1.place(relx=0.12, rely=0.06, anchor="nw")
 
+desired_output = tk.Label(root, text="Desired output i/min:", font=('Arial', 12, 'bold'), background="#42340c", fg="white")
+desired_output.place(relx=0.34, rely=0.06, anchor="nw")
 
-
-
+input2 = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
+input2.place(relx=0.53, rely=0.06, anchor="nw")
 
 
 
