@@ -18,7 +18,7 @@ f = tkfont.Font(family='Arial', size=18, weight='bold', underline=1)
 parameters = tk.Label(root, text="Parameters", font=f, background="#42340c", fg="#B4B4B4")
 parameters.place(relx=0.0, rely=0.0, anchor="nw")
 
-desired_item = tk.Label(root, text="Desired item:", font=('Arial', 12), background="#42340c", fg="white")
+desired_item = tk.Label(root, text="Desired item:", font=('Arial', 12, 'bold'), background="#42340c", fg="white")
 desired_item.place(relx=0.0, rely=0.06, anchor="nw")
 
 input1 = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
