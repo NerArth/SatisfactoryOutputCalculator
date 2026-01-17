@@ -1,0 +1,20 @@
+{
+    "Sources": [
+        {
+            "Name": "Satisfactory",
+            "URL": "https://satisfactory.fandom.com/wiki/Satisfactory",
+            "Description": "The official wiki for Satisfactory.",
+            "AssociatedFiles": [
+                ""
+            ]
+        },
+        {
+            "Name": "FE6515's Satisfactory Spreadsheet",
+            "URL": "https://docs.google.com/spreadsheets/d/13E_gO1JD4I5UKZ-kGlyPmWTjDT-KmA8Frhk27mxAo4Y/edit?usp=sharing",
+            "Description": "FE6515's Satisfactory Spreadsheet.",
+            "AssociatedFiles": [
+                "Satisfactory Recipes - Compiled by FE6515.csv"
+            ]
+        }
+    ]
+}
