@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.font as tkfont
+import tkinter.ttk as ttk
 from screeninfo import get_monitors
 import math
 from PIL import Image, ImageTk
@@ -39,7 +40,8 @@ parameters.place(relx=0.0, rely=0.0, anchor="nw")
 desired_item = tk.Label(root, text="Desired item:", font=('Arial', 12, 'bold'), background="#131313", fg="white")
 desired_item.place(relx=0.0, rely=0.06, anchor="nw")
 
-desired_item_field = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
+desired_item_field = ttk.Combobox(root, values=["Item 1", "Item 2", "Item 3"], state="readonly", width=20)
+desired_item_field.set("Input item")
 desired_item_field.place(relx=0.12, rely=0.06, anchor="nw")
 # TODO: add dropdown menu for items; this will need to request from backend in `calculator.py`
 
@@ -48,6 +50,9 @@ desired_outputrate.place(relx=0.34, rely=0.06, anchor="nw")
 
 desired_outputrate_field = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
 desired_outputrate_field.place(relx=0.53, rely=0.06, anchor="nw")
+
+button = tk.Button(root, text="Submit", bg="#222222", fg="white")
+button.place(relx=0.80, rely=0.06, anchor="ne")
 
 # TODO: add button to submit Form input fields, to request calculation from backend in `calculator.py`
 
