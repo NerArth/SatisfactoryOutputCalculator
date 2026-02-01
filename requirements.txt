@@ -2,3 +2,4 @@ screeninfo
 Pillow
 requests
 tqdm
+pandas
