@@ -1,0 +1,4 @@
+screeninfo
+Pillow
+requests
+tqdm
