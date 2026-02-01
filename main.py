@@ -35,13 +35,13 @@ f = tkfont.Font(family='Arial', size=18, weight='bold', underline=1) # default f
 parameters = tk.Label(root, text="Parameters", font=f, background="#131313", fg="#FFFFFF")
 parameters.place(relx=0.0, rely=0.0, anchor="nw")
 
-### Parameters Inputs
+### Parameters Inputs ("The Form")
 desired_item = tk.Label(root, text="Desired item:", font=('Arial', 12, 'bold'), background="#131313", fg="white")
 desired_item.place(relx=0.0, rely=0.06, anchor="nw")
 
 desired_item_field = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
 desired_item_field.place(relx=0.12, rely=0.06, anchor="nw")
-# TODO: add dropdown menu for items
+# TODO: add dropdown menu for items; this will need to request from backend in `calculator.py`
 
 desired_outputrate = tk.Label(root, text="Desired output i/min:", font=('Arial', 12, 'bold'), background="#1A1A1A", fg="white")
 desired_outputrate.place(relx=0.34, rely=0.06, anchor="nw")
@@ -49,11 +49,14 @@ desired_outputrate.place(relx=0.34, rely=0.06, anchor="nw")
 desired_outputrate_field = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
 desired_outputrate_field.place(relx=0.53, rely=0.06, anchor="nw")
 
-#
+# TODO: add button to submit Form input fields, to request calculation from backend in `calculator.py`
 
-
-
-
+# Calculation Result Section
+# TODO: add a black box with metal-style frame (img) to display calculation results,
+# The black "screen" area needs to have:
+# - vertical and horizontal scrollbars at minimum;
+# - ideally needs to be pannable with drag click;
+# - zooming would be a bonus;
 
 
 # Run
