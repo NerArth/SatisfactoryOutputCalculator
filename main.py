@@ -39,15 +39,15 @@ parameters.place(relx=0.0, rely=0.0, anchor="nw")
 desired_item = tk.Label(root, text="Desired item:", font=('Arial', 12, 'bold'), background="#131313", fg="white")
 desired_item.place(relx=0.0, rely=0.06, anchor="nw")
 
-input1 = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
-input1.place(relx=0.12, rely=0.06, anchor="nw")
+desired_item_field = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
+desired_item_field.place(relx=0.12, rely=0.06, anchor="nw")
 # TODO: add dropdown menu for items
 
-desired_output = tk.Label(root, text="Desired output i/min:", font=('Arial', 12, 'bold'), background="#1A1A1A", fg="white")
-desired_output.place(relx=0.34, rely=0.06, anchor="nw")
+desired_outputrate = tk.Label(root, text="Desired output i/min:", font=('Arial', 12, 'bold'), background="#1A1A1A", fg="white")
+desired_outputrate.place(relx=0.34, rely=0.06, anchor="nw")
 
-input2 = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
-input2.place(relx=0.53, rely=0.06, anchor="nw")
+desired_outputrate_field = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
+desired_outputrate_field.place(relx=0.53, rely=0.06, anchor="nw")
 
 #
 
