@@ -15,6 +15,7 @@ try:
 	_background_label.image = _bg_img
 	_background_label.place(x=0, y=0, relwidth=1, relheight=1)
 except Exception:
+	print("Background image not found")
 	pass
 
 root.minsize(900,700)
