@@ -18,22 +18,30 @@ except Exception:
 	print("Background image not found")
 	pass
 
-root.minsize(900,700)
-
+# Window Settings
+root.minsize(900,700) # can't be resized smaller than this
 screenx = get_monitors()[0].width
 screeny = get_monitors()[0].height
 
-root.geometry(f"{math.floor(screenx*0.33)}x{math.floor(screeny*0.33)}+{math.floor(screenx*0.25)}+{math.floor(screeny*0.05)}")
+root.geometry(
+	f"{math.floor(screenx * 0.33)}x{math.floor(screeny * 0.33)}+" # initial size
+	f"{math.floor(screenx * 0.25)}+{math.floor(screeny * 0.05)}" # initial position
+)
 
-f = tkfont.Font(family='Arial', size=18, weight='bold', underline=1)
+f = tkfont.Font(family='Arial', size=18, weight='bold', underline=1) # default font
+
+# Controls Definitions
+## Parameters Section
 parameters = tk.Label(root, text="Parameters", font=f, background="#131313", fg="#FFFFFF")
 parameters.place(relx=0.0, rely=0.0, anchor="nw")
 
+### Parameters Inputs
 desired_item = tk.Label(root, text="Desired item:", font=('Arial', 12, 'bold'), background="#131313", fg="white")
 desired_item.place(relx=0.0, rely=0.06, anchor="nw")
 
 input1 = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
 input1.place(relx=0.12, rely=0.06, anchor="nw")
+# TODO: add dropdown menu for items
 
 desired_output = tk.Label(root, text="Desired output i/min:", font=('Arial', 12, 'bold'), background="#1A1A1A", fg="white")
 desired_output.place(relx=0.34, rely=0.06, anchor="nw")
@@ -41,12 +49,12 @@ desired_output.place(relx=0.34, rely=0.06, anchor="nw")
 input2 = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
 input2.place(relx=0.53, rely=0.06, anchor="nw")
 
+#
 
 
 
 
 
 
-
-
+# Run
 root.mainloop()
