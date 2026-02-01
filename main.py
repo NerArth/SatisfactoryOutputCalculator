@@ -42,7 +42,7 @@ desired_item.place(relx=0.0, rely=0.06, anchor="nw")
 
 desired_item_data = []
 
-desired_item_field = ttk.Combobox(root, values = desired_item_data, state="readonly", width=20)
+desired_item_field = ttk.Combobox(root, values = desired_item_data, state="normal", width=20)
 desired_item_field.set("Input item")
 desired_item_field.place(relx=0.12, rely=0.06, anchor="nw")
 # TODO: add dropdown menu for items; this will need to request from backend in `calculator.py`
