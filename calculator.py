@@ -15,9 +15,8 @@ class Calculator:
     
     def getItemNames(self):
         _data = pd.read_csv("Satisfactory Recipes - Compiled by FE6515.csv")
-        _ = []
-        for _tier in _data["LOCK"]:
-            if _tier == "FICSMAS":
-                continue
-            _.append(_data["NAME"])
+        _ = _data["NAME"].to_list()
         return _ 
+
+if __name__ == "__main__":
+    print(Calculator().getItemNames())
