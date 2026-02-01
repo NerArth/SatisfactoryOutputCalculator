@@ -4,6 +4,7 @@ import tkinter.ttk as ttk
 from screeninfo import get_monitors
 import math
 from PIL import Image, ImageTk
+import calculator
 
 root = tk.Tk()
 root.title("Satisfactory Output Calculator")
@@ -40,12 +41,11 @@ parameters.place(relx=0.0, rely=0.0, anchor="nw")
 desired_item = tk.Label(root, text="Desired item:", font=('Arial', 12, 'bold'), background="#131313", fg="white")
 desired_item.place(relx=0.0, rely=0.06, anchor="nw")
 
-desired_item_data = []
+desired_item_data = calculator.Calculator().getItemNames()
 
 desired_item_field = ttk.Combobox(root, values = desired_item_data, state="normal", width=20)
 desired_item_field.set("Input item")
 desired_item_field.place(relx=0.12, rely=0.06, anchor="nw")
-# TODO: add dropdown menu for items; this will need to request from backend in `calculator.py`
 
 desired_outputrate = tk.Label(root, text="Desired output i/min:", font=('Arial', 12, 'bold'), background="#1A1A1A", fg="white")
 desired_outputrate.place(relx=0.34, rely=0.06, anchor="nw")
