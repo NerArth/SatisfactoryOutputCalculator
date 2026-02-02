@@ -65,9 +65,7 @@ result.place(relx=0.5, rely=0.55, anchor="center")
 frame = "metal.png"
 
 try:
-	img = 	Image.open(frame)
-	img = img.resize(620, 320)
-	photo = ImageTk.PhotoImage(img)
+	img = ImageTk.PhotoImage(Image.open(frame).resize((620, 320)))
 except Exception:
 	print("Frame image not found")
 
