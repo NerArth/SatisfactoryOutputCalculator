@@ -5,6 +5,7 @@ from screeninfo import get_monitors
 import math
 from PIL import Image, ImageTk
 import calculator
+from PIL import Image, ImageTk
 
 root = tk.Tk()
 root.title("Satisfactory Output Calculator")
@@ -53,10 +54,25 @@ desired_outputrate.place(relx=0.34, rely=0.06, anchor="nw")
 desired_outputrate_field = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
 desired_outputrate_field.place(relx=0.53, rely=0.06, anchor="nw")
 
+##Submit button
 button = tk.Button(root, text="Submit", bg="#222222", fg="white")
 button.place(relx=0.80, rely=0.06, anchor="ne")
 
-# TODO: add button to submit Form input fields, to request calculation from backend in `calculator.py`
+##Result field
+
+result = canvas = tk.Canvas(root, bg="white", width=600, height=300)
+result.place(relx=0.5, rely=0.55, anchor="center")
+
+frame = "metal.png"
+
+try:
+	img = 	Image.open(frame)
+	img = img.resize(620, 320)
+	photo = ImageTk.PhotoImage(img)
+except Exception:
+	print("Frame image not found")
+
+# TODO: Make the button calculate the results
 
 # Calculation Result Section
 # TODO: add a black box with metal-style frame (img) to display calculation results,
