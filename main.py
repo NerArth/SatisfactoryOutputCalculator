@@ -5,7 +5,6 @@ from screeninfo import get_monitors
 import math
 from PIL import Image, ImageTk
 import calculator
-from PIL import Image, ImageTk
 
 root = tk.Tk()
 root.title("Satisfactory Output Calculator")
