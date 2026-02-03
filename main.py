@@ -65,14 +65,20 @@ result.place(relx=0.5, rely=0.55, anchor="center")
 frame = "metal.png"
 
 try:
-	img = ImageTk.PhotoImage(Image.open(frame).resize((620, 320)))
+	img = ImageTk.PhotoImage(Image.open(frame).resize((620, 25)))	
 except Exception:
 	print("Frame image not found")
+	exit()
+frame_label_top = tk.Label(root, image=img, borderwidth=0)
+frame_label_bottom = tk.Label(root, image=img, borderwidth=0)
+frame_label_top.place(relx=0.50, rely=0.32, anchor="center")
+frame_label_bottom.place(relx=0.50, rely=0.77, anchor="center")
+
 
 # TODO: Make the button calculate the results
 
 # Calculation Result Section
-# TODO: add a black box with metal-style frame (img) to display calculation results,
+# TODO: Make code for the image to appear on the side frames
 # The black "screen" area needs to have:
 # - vertical and horizontal scrollbars at minimum;
 # - ideally needs to be pannable with drag click;
