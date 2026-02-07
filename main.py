@@ -3,7 +3,7 @@ import tkinter.font as tkfont
 import tkinter.ttk as ttk
 from screeninfo import get_monitors
 import math
-from PIL import Image, ImageTk, ImageOps
+from PIL import Image, ImageTk, ImageOps, ImageTransform
 import calculator
 
 root = tk.Tk()
@@ -82,7 +82,7 @@ frame_label_right.place(relx=0.88, rely=0.55, anchor="center")
 
 # Calculation Result Section
 # TODO: Make code for the image to appear on the side frames
-# The black "screen" area needs to have:
+# The "screen" area needs to have:
 # - vertical and horizontal scrollbars at minimum;
 # - ideally needs to be pannable with drag click;
 # - zooming would be a bonus;
