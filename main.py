@@ -3,7 +3,7 @@ import tkinter.font as tkfont
 import tkinter.ttk as ttk
 from screeninfo import get_monitors
 import math
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageOps
 import calculator
 
 root = tk.Tk()
@@ -62,17 +62,20 @@ button.place(relx=0.80, rely=0.06, anchor="ne")
 result = canvas = tk.Canvas(root, bg="white", width=600, height=300)
 result.place(relx=0.5, rely=0.55, anchor="center")
 
-frame = "metal.png"
+frame_top = "img/ui/screenframe_topcent.png"
+frame_bottom = "img/ui/screenframe_botcent.png"
+frame_left = "img/ui/screenframe_midleft.png"
 
-try:
-	img = ImageTk.PhotoImage(Image.open(frame).resize((620, 25)))	
-except Exception:
-	print("Frame image not found")
-	exit()
-frame_label_top = tk.Label(root, image=img, borderwidth=0)
-frame_label_bottom = tk.Label(root, image=img, borderwidth=0)
+
+frame_label_top = tk.Label(root, image=ImageTk.PhotoImage(Image.open(frame_top)), borderwidth=0)
+frame_label_bottom = tk.Label(root, image=ImageTk.PhotoImage(Image.open(frame_bottom)), borderwidth=0)
+frame_label_left = tk.Label(root, image=ImageTk.PhotoImage(Image.open(frame_left)), borderwidth=0)
+frame_label_right = tk.Label(root, image=ImageTk.PhotoImage(ImageOps.mirror(Image.open(frame_left))), borderwidth=0)
+
 frame_label_top.place(relx=0.50, rely=0.32, anchor="center")
 frame_label_bottom.place(relx=0.50, rely=0.77, anchor="center")
+frame_label_left.place(relx=0.12, rely=0.55, anchor="center")
+frame_label_right.place(relx=0.88, rely=0.55, anchor="center")
 
 
 # TODO: Make the button calculate the results
