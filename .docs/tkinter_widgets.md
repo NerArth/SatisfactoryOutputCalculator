@@ -43,12 +43,12 @@ The tkinter.ttk module provides access to modern, themed versions of standard wi
 
 |Element|Description|
 |---|---|
-|[Combobox](https://www.tcl-lang.org/man/tcl8.6/TkCmd/combobox.htm)([AltDoc](https://tkdocs.com/shipman/combobox.html))|A combination of an Entry and a drop-down Listbox.|
-|[Notebook](https://www.tcl-lang.org/man/tcl8.6/TkCmd/notebook.htm)([AltDoc](https://tkdocs.com/shipman/notebook.html))|A tabbed container used to switch between different "pages" of a UI.|
-|[Progressbar](https://www.tcl-lang.org/man/tcl8.6/TkCmd/progressbar.htm)([AltDoc](https://tkdocs.com/shipman/progressbar.html))|Visualizes the status of a long-running operation.|
-|[Treeview](https://www.tcl-lang.org/man/tcl8.6/TkCmd/treeview.htm)([AltDoc](https://tkdocs.com/shipman/treeview.html))|Displays data in a hierarchical (tree) or tabular (columns) format.|
-|[Separator](https://www.tcl-lang.org/man/tcl8.6/TkCmd/separator.htm)([AltDoc](https://tkdocs.com/shipman/separator.html))|A simple horizontal or vertical line to visually divide sections.|
-|[Sizegrip](https://www.tcl-lang.org/man/tcl8.6/TkCmd/sizegrip.htm)([AltDoc](https://tkdocs.com/shipman/sizegrip.html))|A small handle at the bottom-right of a window to allow resizing.|
+|[Combobox](https://tkdocs.com/shipman/ttk-Combobox.html)|A combination of an Entry and a drop-down Listbox.|
+|[Notebook](https://tkdocs.com/shipman/ttk-Notebook.html)|A tabbed container used to switch between different "pages" of a UI.|
+|[Progressbar](https://tkdocs.com/shipman/ttk-Progressbar.html)|Visualizes the status of a long-running operation.|
+|[Treeview](https://tkdocs.com/shipman/ttk-Treeview.html)|Displays data in a hierarchical (tree) or tabular (columns) format.|
+|[Separator](https://tkdocs.com/shipman/ttk-Separator.html)|A simple horizontal or vertical line to visually divide sections.|
+|[Sizegrip](https://tkdocs.com/shipman/ttk-Sizegrip.html)|A small handle at the bottom-right of a window to allow resizing.|
 
 ## Feedback & Dialogs
 While not strictly "widgets" in the layout sense, these are built-in classes for standard UI interactions:
