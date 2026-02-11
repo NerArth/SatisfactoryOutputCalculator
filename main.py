@@ -58,16 +58,17 @@ button = tk.Button(root, text="Submit", bg="#222222", fg="white")
 button.place(relx=0.80, rely=0.06, anchor="ne")
 
 ## Visual area for results
+# We place a container to make it easier to have full control
+# of the canvas without things floating away from each other.
+res_size = (600, 400) # XY absolute size in pixels
+res_size_rel = (0.80, 0.60) # XY size % of root
+result_container = tk.Frame(root, bg="#131313")
+# result_container.place(relx=0.5, rely=0.5, relwidth=res_size_rel[0], relheight=res_size_rel[1], anchor="center")
+result_container.place(relx=0.5, rely=0.5, width=res_size[0], height=res_size[1], anchor="center")
 
-frame_top = "img/ui/screenframe_topcent.png"
-frame_bottom = "img/ui/screenframe_botcent.png"
-frame_left = "img/ui/screenframe_midleft.png"
-
-
-frame_label_top = tk.Label(root, image=ImageTk.PhotoImage(Image.open(frame_top)), borderwidth=0)
-frame_label_bottom = tk.Label(root, image=ImageTk.PhotoImage(Image.open(frame_bottom)), borderwidth=0)
-frame_label_left = tk.Label(root, image=ImageTk.PhotoImage(Image.open(frame_left)), borderwidth=0)
-frame_label_right = tk.Label(root, image=ImageTk.PhotoImage(ImageOps.mirror(Image.open(frame_left))), borderwidth=0)
+result_canvas = tk.Canvas(result_container, bg="#131313")
+# result_canvas.place(relx=0.5, rely=0.5, relwidth=res_size_rel[0], relheight=res_size_rel[1], anchor="center")
+result_canvas.place(relx=0.5, rely=0.5, width=res_size[0], height=res_size[1], anchor="center")
 
 frame_label_top.place(relx=0.50, rely=0.32, anchor="center")
 frame_label_bottom.place(relx=0.50, rely=0.77, anchor="center")
