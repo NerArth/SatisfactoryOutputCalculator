@@ -212,3 +212,6 @@ icons/**/*.gif
 icons/**/*.jpg
 icons/**/*.jpeg
 icons/**/*.webp
+
+# DrawIO
+*.drawio.bkp
