@@ -10,14 +10,54 @@ root = tk.Tk()
 root.title("Satisfactory Output Calculator")
 root.configure(background="#42340c")
 
-_bg_path = "background.png"
+# Custom Functions
+## Handlers
+def handleImageOpen(image_path, flip_horizontal = False, size = None):
+	"""
+	Opens an image from `image_path`, returns it as PhotoImage (tkinter)
+
+	Accepts optional `flip_horizontal` to flip the image horizontally
+	Accepts optional `size` to stretch image to the given width and height
+	"""
+	def flip(image):
+		"""
+		Helper function to flip the image horizontally
+		Expects PIL Image as input, returns PIL Image
+		"""
+		return ImageOps.mirror(image)
+
+	try:
+		_img = Image.open(image_path) # PIL Image
+
+		if flip_horizontal:
+			_img = flip(_img)
+		
+		# TODO: Add support to make the image crop and tile as required for specified size
+		# 
+		# The transform method will be important for this, because right now we are just
+		# using it to stretch the image, but we can write code to make it crop and tile
+		if size:
+			_iw, _ih = _img.size
+			_w, _h = size
+			_img = _img.transform(size, Image.Transform.QUAD, (0, 0, 0, _ih, _iw, 0, _iw, _ih))
+
+		# tkinter PhotoImage, what we want to return
+		# remember this has to be assigned to a variable
+		_img = ImageTk.PhotoImage(_img)
+		return _img
+	except Exception as e:
+		print("Could not handle image at path: ", image_path)
+		print("Unhandled exception: ", e)
+		return None
+		
+# Load background image
+_bg_img = handleImageOpen("background.png")
 try:
-	_bg_img = ImageTk.PhotoImage(Image.open(_bg_path))
 	_background_label = tk.Label(root, image=_bg_img)
-	_background_label.image = _bg_img
 	_background_label.place(x=0, y=0, relwidth=1, relheight=1)
-except Exception:
-	print("Background image not found")
+except Exception as e:
+	# print("Background image not found")
+	print("Unhandled exception when loading background image: ", e)
 	pass
 
 # Window Settings
@@ -70,10 +110,27 @@ result_canvas = tk.Canvas(result_container, bg="#131313")
 # result_canvas.place(relx=0.5, rely=0.5, relwidth=res_size_rel[0], relheight=res_size_rel[1], anchor="center")
 result_canvas.place(relx=0.5, rely=0.5, width=res_size[0], height=res_size[1], anchor="center")
 
-frame_label_top.place(relx=0.50, rely=0.32, anchor="center")
-frame_label_bottom.place(relx=0.50, rely=0.77, anchor="center")
-frame_label_left.place(relx=0.12, rely=0.55, anchor="center")
-frame_label_right.place(relx=0.88, rely=0.55, anchor="center")
+frame_top = handleImageOpen("img/ui/screenframe_topcent.png", size=(res_size[0]-32,16))
+frame_right = handleImageOpen("img/ui/screenframe_midleft.png", flip_horizontal=True, size=(16,res_size[1]))
+frame_bottom = handleImageOpen("img/ui/screenframe_botcent.png", size=(res_size[0]-32,16))
+frame_left = handleImageOpen("img/ui/screenframe_midleft.png", size=(16,res_size[1]))
+
+# NOTE: deprecated implementation
+# _w, _h = frame_top.size
+# applied_frame_top = frame_top.transform((_w*20,_h), Image.Transform.QUAD, (0, 0, 0, _h, _w, 0, _w, _h))
+# frame_label_top = tk.Label(root, image=ImageTk.PhotoImage(applied_frame_top), borderwidth=0)
+
+# Clockwise assignment
+frame_label_top = tk.Label(result_container, image=frame_top, borderwidth=0)
+frame_label_right = tk.Label(result_container, image=frame_right, borderwidth=0)
+frame_label_bottom = tk.Label(result_container, image=frame_bottom, borderwidth=0)
+frame_label_left = tk.Label(result_container, image=frame_left, borderwidth=0)
+
+frame_label_top.place(relx=0.5, rely=0, anchor="n")
+frame_label_right.place(relx=1.0, rely=0.5, anchor="e")
+frame_label_bottom.place(relx=0.5, rely=1.0, anchor="s")
+frame_label_left.place(relx=0, rely=0.5, anchor="w")
+
 
 
 # TODO: Make the button calculate the results
