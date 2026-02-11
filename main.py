@@ -53,14 +53,11 @@ desired_outputrate.place(relx=0.34, rely=0.06, anchor="nw")
 desired_outputrate_field = tk.Text(root, height = 1, width = 20, bg = "black", fg = "white")
 desired_outputrate_field.place(relx=0.53, rely=0.06, anchor="nw")
 
-##Submit button
+## Submit button
 button = tk.Button(root, text="Submit", bg="#222222", fg="white")
 button.place(relx=0.80, rely=0.06, anchor="ne")
 
-##Result field
-
-result = canvas = tk.Canvas(root, bg="white", width=600, height=300)
-result.place(relx=0.5, rely=0.55, anchor="center")
+## Visual area for results
 
 frame_top = "img/ui/screenframe_topcent.png"
 frame_bottom = "img/ui/screenframe_botcent.png"
